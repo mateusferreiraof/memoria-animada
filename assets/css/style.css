@@ -255,77 +255,108 @@ body {
 .code.virada .conteudo-frente {
   color: #ffffff;
 }
-/*botão info*/
 
+/* BOTÃO DE INFORMAÇÕES */
+#slideButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  left: auto;
+  transform: none;
+
+  width: 60px;
+  height: 65px;
+
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 38px;
+  cursor: pointer;
+
+  z-index: 1001;
+  transition: background 0.2s ease;
+}
+
+#slideButton:hover {
+  background: #1d4ed8;
+}
+
+/* PAINEL DE INFORMAÇÕES */
 #slidePanel {
   position: fixed;
-  top: 50%;
-  left: 0;
+  top: 95px;
+  right: 20px;
+  left: auto;
+
   width: 280px;
-  max-height: 80vh;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 115px);
   overflow-y: auto;
   box-sizing: border-box;
 
+  padding: 20px;
   background: #172033;
   color: white;
-  padding: 60px 20px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px #0003;
 
-  border-radius: 0 12px 12px 0;
-  box-shadow: 2px 4px 12px #0003;
+  transform: translateX(calc(100% + 30px));
+  visibility: hidden;
+  opacity: 0;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.25s ease,
+    visibility 0.35s ease;
+
   z-index: 1000;
-
-  transform: translate(-100%, -50%);
-  transition: transform 0.35s ease;
 }
-
-/* Painel aberto */
-#slidePanel.open {
-  transform: translate(0, -50%);
-}
-
 #slidePanel p {
   padding: 10px;
 }
-/* Botão da seta */
-#slidePanel {
-  position: fixed;
-  left: 0;
-  top: 50%;
-  transform: translate(-100%, -50%);
-  transition: transform 0.35s ease;
-  z-index: 1000;
-}
-
+/* PAINEL ABERTO */
 #slidePanel.open {
-  transform: translate(0, -50%);
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
 }
 
-#slideButton {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+/* TABLETS E CELULARES */
+@media (max-width: 1024px) {
+  #slideButton {
+    top: 12px;
+    right: 12px;
+    width: 48px;
+    height: 48px;
+    font-size: 30px;
+  }
 
-  width: 60px; /* Largura do botão */
-  height: 75px; /* Altura do botão */
-
-  font-size: 42px; /* Tamanho da seta */
-
-  border: none;
-  border-radius: 0 14px 14px 0;
-  background: #2563eb;
-  color: white;
-
-  cursor: pointer;
-  z-index: 1001;
-
-  transition:
-    left 0.35s ease,
-    background 0.2s ease;
+  #slidePanel {
+    top: 70px;
+    right: 12px;
+    width: 260px;
+    max-height: 70vh;
+  }
 }
 
-#slideButton.open {
-  left: 280px;
+@media (max-width: 600px) {
+  #slideButton {
+    top: 10px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
+  }
+
+  #slidePanel {
+    top: 64px;
+    right: 10px;
+    width: 240px;
+    max-width: calc(100vw - 20px);
+    max-height: 65vh;
+    padding: 16px;
+  }
 }
 
 /*erro cartas*/
