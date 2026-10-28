@@ -5,11 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Memória Animada</title>
         <link rel="stylesheet" href="assets/css/style.css">
+        
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👾</text></svg>">
+
         <script src="assets/js/script.js" defer></script>
         <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
+        <!-- Barra lateral de informações do jogo -->
+        
+    <button id="slideButton" aria-expanded="false">🗺️</button>
+
+    <aside id="slidePanel">
+        <h2>Informações do jogo</h2>
+        <p>Descrição:  As cartas são embaralhadas e espalhadas viradas para baixo, sem se sobrepor.</p>
+        <p>Objetivo: formar todos os pares de cartas na sequência correta.</p>
+    </aside>
+
+
     <div class="row-1">
         <h1 class="h1-row-1">Memória Animada</h1>
         <h2 class="h2-row-1">Encontre os pares e descubra as animações.</h2>
@@ -27,7 +41,7 @@
             <h3 class="h3-hud-row-2">TEMPO</h3>
             <p class="p-hud-row-2">00:00</p>
         </div>
-        <button class="hud-row-2 button-hud-row-2">
+        <button class="hud-row-2 button-hud-row-2 ripple-effect">
             <h3 class="h3-hud-row-2">↺ Reiniciar</h3>
         </button>
     </div>
